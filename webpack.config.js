@@ -10,6 +10,9 @@ const PROD = NODE_ENV === "production";
 module.exports = {
   entry: { "build/bundle": ["./src/index.js"] },
   resolve: {
+    modules: [
+      /* path.resolve(__dirname, 'src'),  */'node_modules'
+    ],
     alias: { svelte: path.dirname(require.resolve("svelte/package.json")) },
     extensions: [".mjs", ".js", ".svelte"],
     mainFields: ["svelte", "browser", "module", "main"],
